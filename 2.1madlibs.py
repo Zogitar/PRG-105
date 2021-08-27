@@ -1,0 +1,26 @@
+print("Bmblb by Casey Lee Williams: \n")
+
+place = input("Enter the name of a place:")
+season = input("Enter the name of a season:")
+insect = input("Enter the name of an insect:")
+animal = input("Enter the name of an animal:")
+emotion = input("Enter the name of an Emotion:")
+action = input("Enter the name of an action:")
+bodypart = input("Enter the name of a body part:")
+bodypart2 = input("Enter the name of another body part:")
+print("")
+
+print("There's a " + place + " where I go")
+print("If you meet me there, no one will know")
+print("In the " + season + ", in the sun")
+print("We can be alone without anyone \n")
+
+print("All the " + insect + "'s and the " + animal + "'s")
+print("Keep our secret, no, they won't say a word")
+print("But they watch us, and they know")
+print("And they're happy as they see our " + emotion + " grow \n")
+
+print("We'll " + action + " for a while as I drink in your smile")
+print("It feels like a dream that's come true")
+print("My " + bodypart + " starts to buzz")
+print("And my " + bodypart2 + " fills with love over you")
