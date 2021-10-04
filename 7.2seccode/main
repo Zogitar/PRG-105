@@ -2,20 +2,26 @@
 
 
 def main():
-    xco = ['Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', ' ', 'Mate', 'Complete', 'Snake', 'Nani']
+    xco = ['Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', 'Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', ' ', 'Mate', 'Complete', 'Snake', 'Nani']
 
-    norm = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', ',', '.', '!', '?']
+    norm = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', ',', '.', '!', '?']
+
+    outline = []
+
+    print("This program will take whatever you type and convert it into a secret code!")
 
     conv = input('Enter the phrase you would like converted into the xco secret code: ')
 
-    print(len(conv))
-    xcofin = ""
     for letter in conv:
-        for item in range (0, len(conv)):
-            if letter.upper() == norm[item]:
-                xcofin += (xco[item] + " ")
+        normind = norm.index(letter)
+        xcoind = xco[normind]
+        outline.append(xcoind)
+    print(outline)
 
-    print(xcofin)
+    file = open("code.txt", "w")
+    for item in outline:
+        file.write(str(item) + "\n")
+    file.close()
 
 
 main()
