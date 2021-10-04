@@ -1,1 +1,21 @@
+# 7.2 secret code coding
 
+
+def main():
+    xco = ['Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', ' ', 'Mate', 'Complete', 'Snake', 'Nani']
+
+    norm = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', ',', '.', '!', '?']
+
+    conv = input('Enter the phrase you would like converted into the xco secret code: ')
+
+    print(len(conv))
+    xcofin = ""
+    for letter in conv:
+        for item in range (0, len(conv)):
+            if letter.upper() == norm[item]:
+                xcofin += (xco[item] + " ")
+
+    print(xcofin)
+
+
+main()
