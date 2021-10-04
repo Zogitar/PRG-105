@@ -1,0 +1,22 @@
+# 7.3 decoding code
+
+
+def main():
+    xco = ['Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', 'Ankh', 'Basil', 'Count', 'Dart', 'Engine', 'Fort', 'Green', 'Height', 'Indigo', 'Junk', 'Kin', 'Lint', 'Mount', 'Nemo', 'Oval', 'Pork', 'Queen', 'Rust', 'Stall', 'Tall', 'Universe', 'Vexing', 'Waist', 'Xylophone', 'Yacht', 'Zero', ' ', 'Mate', 'Complete', 'Snake', 'Nani']
+
+    norm = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', ',', '.', '!', '?']
+
+    outline = []
+
+    print("This program will take whatever secret code produced prior and decode it!")
+
+    conv = input('Enter the file you would like decoded: ')
+    deco = open(conv, "r")
+    for line in deco:
+        xcoind = xco.index(line)
+        normind = norm[xcoind]
+        outline.append(normind)
+    print(outline)
+
+
+main()
