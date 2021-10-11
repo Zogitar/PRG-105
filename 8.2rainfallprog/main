@@ -1,2 +1,17 @@
 # 8.2 Rainfall Coding
-kasf
+tot = 0
+cou = 0
+rain = open("rainfalltotals.txt", "r")
+for line in rain:
+    line = line.rstrip("\n")
+    data = line.split()
+    datamon = data[0]
+    datacou = data[1].split('.')
+    if datacou[0].isdigit() and datacou[1].isdigit():
+        num = float(datacou[0] + "." + datacou[1])
+        tot += float(num)
+        cou += 1
+    else:
+        print(datamon + " has invalid data because " + str(data[1]) + " isn't a number.\n")
+print("The total rainfall over the last " + str(cou) + " months is " + format(tot, '.2f'))
+print("The average rainfall over the last " + str(cou) + " months is " + format(tot/cou, '.2f'))
