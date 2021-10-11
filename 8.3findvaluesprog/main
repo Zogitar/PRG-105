@@ -1,0 +1,75 @@
+# 8.3 Finding Values in a List Coding
+print("The following accounts are at least 90 days overdue:")
+over = open("over90.txt", "r")
+one = over.readline()
+two = over.readline()
+three = over.readline()
+four = over.readline()
+five = over.readline()
+acc = open("accounts.txt", "r")
+for line in acc:
+    spl = line.split(",")
+    che = spl[0]
+    aone = acc.readline()
+    atwo = acc.readline()
+    athree = acc.readline()
+    afour = acc.readline()
+    afive = acc.readline()
+    asix = acc.readline()
+    aseven = acc.readline()
+    aeight = acc.readline()
+    anine = acc.readline()
+    aten = acc.readline()
+    aeleven = acc.readline()
+    atwelve = acc.readline()
+    athirteen = acc.readline()
+    afourteen = acc.readline()
+    afifteen = acc.readline()
+    asixteen = acc.readline()
+    aseventeen = acc.readline()
+    aeighteen = acc.readline()
+    anineteen = acc.readline()
+    atwenty = acc.readline()
+    atwentyone = acc.readline()
+    if aone is one or two or three or four or five:
+        print(aone)
+    if atwo is one or two or three or four or five:
+        print(atwo)
+    if athree is one or two or three or four or five:
+        print(athree)
+    if afour is one or two or three or four or five:
+        print(afour)
+    if afive is one or two or three or four or five:
+        print(afive)
+    if asix is one or two or three or four or five:
+        print(asix)
+    if aseven is one or two or three or four or five:
+        print(aseven)
+    if aeight is one or two or three or four or five:
+        print(aeight)
+    if anine is one or two or three or four or five:
+        print(anine)
+    if aten is one or two or three or four or five:
+        print(aten)
+    if aeleven is one or two or three or four or five:
+        print(aeleven)
+    if atwelve is one or two or three or four or five:
+        print(atwelve)
+    if athirteen is one or two or three or four or five:
+        print(athirteen)
+    if afourteen is one or two or three or four or five:
+        print(afourteen)
+    if afifteen is one or two or three or four or five:
+        print(afifteen)
+    if asixteen is one or two or three or four or five:
+        print(asixteen)
+    if aseventeen is one or two or three or four or five:
+        print(aseventeen)
+    if aeighteen is one or two or three or four or five:
+        print(aeighteen)
+    if anineteen is one or two or three or four or five:
+        print(anineteen)
+    if atwenty is one or two or three or four or five:
+        print(atwenty)
+    if atwentyone is one or two or three or four or five:
+        print(atwentyone)
