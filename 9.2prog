@@ -1,0 +1,21 @@
+# 9.2 Program Coding
+jpen = {'ichi': 'one', 'ni': 'two', 'yon': 'four', 'nana': 'seven', 'san': 'three', 'roku': 'six', 'juu': 'ten', 'hachi': 'eight', 'go': 'five', 'kyuu': 'nine'}
+grad = 0
+for jp in jpen:
+    g = input("What is '" + jp + "' in english?")
+    if g == str(jpen[jp]):
+        print("That is correct")
+        grad += 1
+    else:
+        print("That is incorrect")
+print("Your final score is", grad, "out of 10")
+if grad >= 9:
+    print("A")
+elif grad == 8:
+    print("B")
+elif grad == 7:
+    print("C")
+elif grad == 6:
+    print("D")
+elif grad <= 5:
+    print("F")
