@@ -1,10 +1,26 @@
 # 9.1 coding
 print("You will be entering the date and the number of steps taken for each day in a week.")
+days = {}
 total = 0
 nums = 0
-days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
-for day in days:
-    to = input("How many steps did you take on " + str(day) + "? ")
-    total += str(to)
+maximum = 0
+minimum = 999999999
+for day in ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"):
+    to = int(input("How many steps did you take on " + day + "? "))
+    days[day] = to
+    if to >= maximum:
+        maximum = to
+    if to < minimum:
+        minimum = to
+    total += to
     nums += 1
-print(total)
+print("your total steps taken this week is", total)
+print("Your average steps per day this week is", format(total/nums, '.2f'))
+print("The most steps you took on one day this week was", maximum, "on")
+for match in days:
+    if days[match] == maximum:
+        print("\t" + match)
+print("The least steps you took on one day this week was", minimum, "on")
+for match in days:
+    if days[match] == minimum:
+        print("\t" + match)
