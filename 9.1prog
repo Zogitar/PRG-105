@@ -1,0 +1,10 @@
+# 9.1 coding
+print("You will be entering the date and the number of steps taken for each day in a week.")
+total = 0
+nums = 0
+days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+for day in days:
+    to = input("How many steps did you take on " + str(day) + "? ")
+    total += str(to)
+    nums += 1
+print(total)
