@@ -1,0 +1,45 @@
+# employee class:
+
+
+class Employee:
+    def __init__(self, name, number):
+        self.__name = name
+        self.__number = number
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_number(self, number):
+        self.__number = number
+
+    def get_name(self):
+        return self.__name
+
+    def get_number(self):
+        return self.__number
+
+    def __str__(self):
+        return "Employee name: " + self.__name + "\nEmployee number: " + self.__number
+
+
+class Productionworker(Employee):
+    def __init__(self, name, number, pay, shift):
+        Employee.__init__(self, name, number)
+
+        self.__pay = pay
+        self.__shift = shift
+
+    def set_pay(self, pay):
+        self.__pay = pay
+
+    def set_shift(self, shift):
+        self.__shift = shift
+
+    def get_pay(self):
+        return self.__pay
+
+    def get_shift(self):
+        return self.__shift
+
+    def __str__(self):
+        return "Employee name: " + self.get_name() + "\nEmployee number: " + self.get_number() + "\nPay Rate: " + self.__pay + "\nShift: " + self.__shift
