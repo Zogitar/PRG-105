@@ -1,1 +1,13 @@
 # 11.1 inheritance code
+import desk
+import officefurniture
+
+
+def main():
+    chair = officefurniture.Officefurniture("Chair", "Oak", "24 inches", "24 inches", "36 inches", "$240.00")
+    print(chair, "\n")
+    des = desk.Desk("Desk", "Acacia", "36 inches", "54 inches", "24 inches", "$450.00", "right", "2")
+    print(des)
+
+
+main()
