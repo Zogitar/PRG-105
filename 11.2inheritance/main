@@ -1,1 +1,23 @@
 # 11.2 inheritance code
+import employee
+
+
+def main():
+    print("Please answer the following questions, for the shift, answer 1 for day or 2 for night")
+    name = input("Employee's name: ")
+    number = input("Employee's number: ")
+    pay = input("Employee's pay rate: ")
+    shift = input("Employee's shift: ")
+
+    if shift == "1":
+        shift = "Day"
+    elif shift == "2":
+        shift = "Night"
+    else:
+        shift = "unknown"
+
+    employ = employee.Productionworker(name, number, pay, shift)
+    print("Employee name: " + employ.get_name() + "\nEmployee number: " + employ.get_number() + "\nPay rate: " + employ.get_pay() + "\nShift: " + employ.get_shift())
+
+
+main()
