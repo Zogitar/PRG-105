@@ -15,7 +15,7 @@ def main():
 def message(times):
     if times > 0:
         print("Hooray!")
-        message(times -1)
+        message(times - 1)
 
 
 main()
