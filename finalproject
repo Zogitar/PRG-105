@@ -1229,7 +1229,7 @@ class Shield1GUI:
             _ = WeaponDefGUI()
             self.look.destroy()
         elif self.radio_var.get() == 2:
-            _ = WeaponFleeSGUI()
+            _ = WeaponFleeGUI()
             self.look.destroy()
         else:
             tkinter.messagebox.showinfo('Function', 'still under construction')
@@ -1261,54 +1261,6 @@ class WeaponDefGUI:
 
         # widgets for top frame - label and entry box for name
         self.text = tkinter.Radiobutton(self.top_frame, text='You put up your shield and brace yourself for an attack,\nbut the goblins never attack, instead they attempt\nto communicate with you.\nYou find they are kind and decide to stay\nwith them for the night.\nYou then continue on your adventure.', variable=self.radio_var, value=1)
-
-        # pack top frame
-        self.text.pack(anchor='w', padx=20)
-
-        # buttons for bottom frame
-        self.ok_button = tkinter.Button(self.bottom_frame, text='OK', command=self.open_menu)
-
-        # pack bottom frame
-        self.ok_button.pack()
-
-        # pack frames
-        self.top_frame.pack()
-        self.bottom_frame.pack()
-
-    def open_menu(self):
-        if self.radio_var.get() == 1:
-            _ = WeaponFlee1GUI()
-            self.look.destroy()
-        else:
-            tkinter.messagebox.showinfo('Function', 'still under construction')
-
-
-# You flee with Shield  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-class WeaponFleeSGUI:
-    def __init__(self):
-
-        # open the file, load to customers, close file. Do in each class
-        try:
-            input_file = open("customer_file.dat", 'rb')
-            self.customers = pickle.load(input_file)
-            input_file.close()
-        except (FileNotFoundError, IOError):
-            self.customers = {}
-
-        # tkinter.Toplevel() is like tkinter.Frame() but it opens in a new window
-        self.look = tkinter.Toplevel()
-        self.look.title('AdvenJ')
-
-        # create Frames for this Toplevel window
-        self.top_frame = tkinter.Frame(self.look)
-        self.bottom_frame = tkinter.Frame(self.look)
-
-        self.radio_var = tkinter.IntVar()
-        self.radio_var.set(1)
-
-        # widgets for top frame - label and entry box for name
-        self.text = tkinter.Radiobutton(self.top_frame, text='You flee from the goblins.\nThey do not attempt to chase you\nand you make it to the next town.\nYou stay for a night\nthen continue your journey.', variable=self.radio_var, value=1)
 
         # pack top frame
         self.text.pack(anchor='w', padx=20)
