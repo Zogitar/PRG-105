@@ -15,6 +15,7 @@ class CrudGUI:
 
         self.word_frame = tkinter.Frame(self.master)
         self.top_frame = tkinter.Frame(self.master)
+        self.middle_frame = tkinter.Frame(self.master)
         self.bottom_frame = tkinter.Frame(self.master)
 
         self.radio_var = tkinter.IntVar()
@@ -22,6 +23,9 @@ class CrudGUI:
 
         self.search_label = tkinter.Label(self.top_frame, text='You have heard many rumors of the powerful demon lord.\nYou have been selected as the chosen one for your skill in battle\nYou must go on your travels and meet this demon lord.\nCan you befriend this powerful creature, or will you need to slay them?\nChoose your weapon, adventurer: ')
         self.search_label.pack()
+
+        listing = ["(Good Route)", "(Neutral Route)", "(Bad Route)", "(Evil Route)"]
+        completion = ["You have 0% completion", "You have 25% completion, youve completed:", "You have 50% completion, youve completed:", "You have 75% completion, youve completed:", "You have 100% completion, youve completed:"]
 
         # create the radio buttons
         self.sword = tkinter.Radiobutton(self.top_frame, text='Sword', variable=self.radio_var, value=1)
@@ -35,6 +39,78 @@ class CrudGUI:
         self.daggers.pack(anchor='w', padx=20)
         self.shield.pack(anchor='w', padx=20)
 
+        cread = open("ccomp.txt", "r")
+        fread = open("fcomp.txt", "r")
+        bread = open("bcomp.txt", "r")
+        eread = open("ecomp.txt", "r")
+
+        if "done" in (cread and fread and bread and eread):
+            self.all = tkinter.Label(self.top_frame, text=completion[4])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and fread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[3])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and fread and eread):
+            self.all = tkinter.Label(self.top_frame, text=completion[3])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and eread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[3])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (eread and fread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[3])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and fread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (cread and eread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (fread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (fread and eread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in (eread and bread):
+            self.all = tkinter.Label(self.top_frame, text=completion[2])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in cread:
+            self.all = tkinter.Label(self.top_frame, text=completion[1])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in fread:
+            self.all = tkinter.Label(self.top_frame, text=completion[1])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in bread:
+            self.all = tkinter.Label(self.top_frame, text=completion[1])
+            self.all.pack(anchor='w', side='top')
+        elif "done" in eread:
+            self.all = tkinter.Label(self.top_frame, text=completion[1])
+            self.all.pack(anchor='w', side='top')
+        else:
+            self.all = tkinter.Label(self.top_frame, text=completion[0])
+            self.all.pack(anchor='w', side='top')
+
+        cdone = open("ccomp.txt", "r")
+        fdone = open("fcomp.txt", "r")
+        bdone = open("bcomp.txt", "r")
+        edone = open("ecomp.txt", "r")
+
+        if "done" in cdone:
+            self.neutral = tkinter.Label(self.top_frame, text=listing[0])
+            self.neutral.pack(anchor='w', side='left')
+        if "done" in fdone:
+            self.neutral = tkinter.Label(self.top_frame, text=listing[1])
+            self.neutral.pack(anchor='w', side='left')
+        if "done" in bdone:
+            self.bad = tkinter.Label(self.top_frame, text=listing[2])
+            self.bad.pack(anchor='w', side='left')
+        if "done" in edone:
+            self.evil = tkinter.Label(self.top_frame, text=listing[3])
+            self.evil.pack(anchor='w', side='left')
+
         # create ok and quit buttons
         self.ok_button = tkinter.Button(self.bottom_frame, text='OK', command=self.open_menu)
         self.quit_button = tkinter.Button(self.bottom_frame, text='QUIT', command=self.master.destroy)
@@ -46,6 +122,7 @@ class CrudGUI:
         # pack the frames
         self.word_frame.pack()
         self.top_frame.pack()
+        self.middle_frame.pack()
         self.bottom_frame.pack()
 
     def open_menu(self):
@@ -402,7 +479,7 @@ class WeaponBad4GUI:
         self.radio_var.set(1)
 
         # widgets for top frame - label and entry box for name
-        self.text = tkinter.Radiobutton(self.top_frame, text='Without a second thought, you instantly attack the golem.\nThe golem seemed to be holding you there\nas if sacrificing itself, allowing other to escape...\nYou dont gve it any though and slay the golem...\nYou then reach the next town\nYou rest for one day\nthen continue on your adventure...', variable=self.radio_var, value=1)
+        self.text = tkinter.Radiobutton(self.top_frame, text='Without a second thought, you instantly attack the golem.\nThe golem seemed to be holding you there\nas if sacrificing itself, allowing others to escape...\nYou dont gve it any thought and slay the golem...\nYou then reach the next town\nYou rest for one day\nthen continue on your adventure...', variable=self.radio_var, value=1)
 
         # pack top frame
         self.text.pack(anchor='w', padx=20)
@@ -525,6 +602,9 @@ class WeaponBad6GUI:
             info = open("info.txt", "w")
             info.write("bad\nbad\nbad")
             info.close()
+            bcomp = open("bcomp.txt", "w")
+            bcomp.write("done")
+            bcomp.close()
             self.look.destroy()
         elif self.radio_var.get() == 2:
             info = open("info.txt", "w")
@@ -885,6 +965,9 @@ class WeaponFlee6GUI:
 
     def open_menu(self):
         if self.radio_var.get() == 1:
+            fcomp = open("fcomp.txt", "w")
+            fcomp.write("done")
+            fcomp.close()
             self.look.destroy()
         else:
             tkinter.messagebox.showinfo('Function', 'still under construction')
@@ -1141,6 +1224,9 @@ class WeaponCom4GUI:
 
     def open_menu(self):
         if self.radio_var.get() == 1:
+            ccomp = open("ccomp.txt", "w")
+            ccomp.write("done")
+            ccomp.close()
             self.look.destroy()
         else:
             tkinter.messagebox.showinfo('Function', 'still under construction')
@@ -1740,6 +1826,9 @@ class Evil8GUI:
             info = open("info.txt", "w")
             info.write("bad\nbad\nbad")
             info.close()
+            ecomp = open("ecomp.txt", "w")
+            ecomp.write("done")
+            ecomp.close()
             self.look.destroy()
         elif self.radio_var.get() == 2:
             info = open("info.txt", "w")
